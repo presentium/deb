@@ -1,0 +1,38 @@
+name: Package Deb
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.deb'
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Import GPG key
+        run: echo "${{ secrets.GPG_PRIVATE_KEY }}" | base64 --decode | gpg --import
+
+      - name: Creating the Packages and Packages.gz files
+        run: |
+          dpkg-scanpackages --multiversion . > Packages
+          gzip -k -f Packages
+      
+      - name: Creating the Release, Release.gpg and InRelease files
+        run: |
+          apt-ftparchive release . > Release
+          gpg --default-key "${{ vars.EMAIL }}" -abs -o - Release > Release.gpg
+          gpg --default-key "${{ vars.EMAIL }}" --clearsign -o - Release > InRelease
+
+      - name: Commit and push the changes
+        run: |
+          git config --local user.email "${{ vars.EMAIL }}"
+          git config --local user.name "${{ vars.NAME }}"
+          git add .
+          git commit -m "Adding package for rpi client release"
+          git push
+          
