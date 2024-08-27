@@ -2,8 +2,6 @@ name: Package Deb
 
 on:
   push:
-    branches:
-      - main
     paths:
       - '**.deb'
 
