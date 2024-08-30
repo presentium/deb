@@ -1,1 +1,1 @@
-deb [signed-by=/etc/apt/trusted.gpg.d/deb.gpg] deb.presentium.ch ./
+deb [signed-by=/etc/apt/trusted.gpg.d/presentium.gpg] https://deb.presentium.ch ./
