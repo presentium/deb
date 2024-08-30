@@ -1,16 +1,23 @@
 name: Package Deb
 
 on:
-  push:
-    paths:
-      - '**.deb'
+  repository_dispatch:
+    types: [rpi-client-release]
 
 jobs:
   package:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Download release
+        uses: robinraju/release-downloader@v1.11
+        with:
+          repo: 'presentium/rpi-client-app'
+          latest: true
+          fileName: '*.deb'
 
       - name: Import GPG key
         run: echo "${{ secrets.GPG_PRIVATE_KEY }}" | base64 --decode | gpg --import
