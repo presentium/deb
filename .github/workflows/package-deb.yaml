@@ -15,7 +15,7 @@ jobs:
       - name: Download release
         uses: robinraju/release-downloader@v1.11
         with:
-          repo: 'presentium/rpi-client-app'
+          repository: 'presentium/rpi-client-app'
           latest: true
           fileName: '*.deb'
 
