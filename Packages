@@ -1,0 +1,13 @@
+Package: presentium-client
+Version: 1.0.0
+Architecture: all
+Maintainer: <info@presentium.ch>
+Depends: python3, python3-pip, python3-venv
+Filename: ./presentium-client_1.0.0-1_all.deb
+Size: 5148
+MD5sum: c570960ea3554ddaeb14cdbbcde082cd
+SHA1: 56049cc3ed683bd055f41452ef0861f10c8e8577
+SHA256: e16a8a00578a1ea6249c2f122a16e9e8c3d74e14080f3f9e6c9ef420808f66ac
+Homepage: https://presentium.ch
+Description: Presentium client app.
+
