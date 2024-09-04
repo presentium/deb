@@ -24,3 +24,16 @@ SHA256: 5b49d521376e9f37f47a49a3076c6344827ab6b9b27399e268381b43e4cccec3
 Homepage: https://presentium.ch
 Description: Presentium client app.
 
+Package: presentium-client
+Version: 1.0.2
+Architecture: all
+Maintainer: <info@presentium.ch>
+Depends: python3 (>= 3.11.2), python3-pip (>= 23.0.1), python3-venv (>= 3.11.2)
+Filename: ./presentium-client_1.0.2-1_all.deb
+Size: 5160
+MD5sum: 17c2c76788e38861d3f25facb3adc59b
+SHA1: 71a439d8c7d564cf36aadf5577d52ecb332bb0e8
+SHA256: b79d447333ca0232177753fb5a47f944d9de236e44f7e8e4d870d02480b4b660
+Homepage: https://presentium.ch
+Description: Presentium client app.
+
